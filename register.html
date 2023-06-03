@@ -59,71 +59,65 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        const signIn = document.getElementById("signIn");
+  const signIn = document.getElementById("signIn");
 
-        // Add form validation on button click
-        signIn.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent form submission
+  // Add form validation on button click
+  signIn.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
 
-          if (validateForm()) {
-            // Form inputs are valid, proceed with the sign-in logic
-            var fullname = document.getElementById("fullname").value;
-            var number = document.getElementById("number").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+    if (validateForm()) {
+      // Form inputs are valid, proceed with the sign-in logic
+      var fullname = document.getElementById("fullname").value;
+      var number = document.getElementById("number").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
 
-            const firebaseConfig = {
-              apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
-              authDomain: "v-nect-registration.firebaseapp.com",
-              databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
-              projectId: "v-nect-registration",
-              storageBucket: "v-nect-registration.appspot.com",
-              messagingSenderId: "78346752196",
-              appId: "1:78346752196:web:30c5c7dad57250c96e7991",
-              measurementId: "G-Q5ZXK57J3Z"
-            };
+      const firebaseConfig = {
+        apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
+        authDomain: "v-nect-registration.firebaseapp.com",
+        databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "v-nect-registration",
+        storageBucket: "v-nect-registration.appspot.com",
+        messagingSenderId: "78346752196",
+        appId: "1:78346752196:web:30c5c7dad57250c96e7991",
+        measurementId: "G-Q5ZXK57J3Z"
+      };
 
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const database = getDatabase(app);
-            const auth = getAuth(app);
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth(app);
 
-            createUserWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-                sendEmailVerification(auth.currentUser)
-                  .then(() => {
-                    // Email verification sent!
-                    // ...
-                  });
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          sendEmailVerification(auth.currentUser)
+            .then(() => {
+              // Email verification sent!
+              // ...
+            });
 
-                const user = userCredential.user;
+          const user = userCredential.user;
 
-                const userData = {
-                  fullname: fullname,
-                  email: email,
-                  number: number,
-                };
+          const userData = {
+            fullname: fullname,
+            email: email,
+            number: number,
+          };
 
-                set(ref(database, "users/" + user.uid), userData)
-                  .then(() => {
-                    alert("User Created");
-                  })
-                  .catch((error) => {
-                    alert("Failed to create user: " + error.message);
-                  });
-              })
-              .catch((error) => {
-                alert("Failed to create user: " + error.message);
-              });
-          }
+          set(ref(database, "users/" + user.uid), userData)
+            .then(() => {
+              alert("User Created");
+            })
+            .catch((error) => {
+              alert("Failed to create user: " + error.message);
+            });
+        })
+        .catch((error) => {
+          alert("Failed to create user: " + error.message);
         });
-
-        const loginLink = document.getElementById("loginLink");
-        loginLink.addEventListener("click", function (event) {
-          event.preventDefault();
-          window.location.href = "login.html";
-        });
-      });
+    }
+  });
+});
     </script>
   </head>
   <body>
@@ -146,11 +140,11 @@
         <form action="#" action="">
           <div class="inputs">
             <div class="inputBox">
-              <input type="text" name="fullname" id="fullname" required />
+              <input type="fullname" name="fullname" id="fullname" required />
               <span class="user">Fullname</span>
             </div>
             <div class="inputBox">
-              <input type="tel" name="number" id="number" required />
+              <input type="number" name="number" id="number" required />
               <span class="user">Number</span>
             </div>
             <div class="inputBox">
@@ -164,7 +158,7 @@
             </div>
             <div class="inputBox">
               <input
-                type="password"
+                type="Conpassword"
                 name="Conpassword"
                 id="Conpassword"
                 required
@@ -174,15 +168,16 @@
           </div>
 
           <br />
-          <button class="enter" id="signIn">Sign in</button>
+          <button class="enter">Sign in</button>
         </form>
         <br />
         <br />
         <br />
         <p class="already">
-          Already have an account? <a href="#" id="loginLink">Log in</a>.
+          Already have an account? <a href="login.html">Log in</a>.
         </p>
       </section>
     </main>
+ 
   </body>
 </html>
