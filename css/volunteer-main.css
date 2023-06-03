@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Vidaloka&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cbg {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background: rgba(0, 0, 0, 0.36);
+}
+.cbg::-webkit-scrollbar {
+  display: none;
+}
+
+img.back {
+  max-width: 5%;
+  position: absolute;
+  left: 2%;
+  top: 2%;
+}
+
+.bg {
+  background: rgba(0, 0, 0, 0.62);
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.62);
+  width: 100%;
+  height: 100vh;
+}
+
+.left-side-content h4 {
+  position: absolute;
+  left: 3%;
+  top: 14%;
+  font-family: "Sue Ellen Francisco";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 108.3%;
+  color: #ffffff;
+}
+
+.left-side-content h1 {
+  position: absolute;
+  left: 3%;
+  top: 20%;
+  width: 531px;
+  height: 96px;
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 120%;
+  color: #ffffff;
+}
+
+.left-side-content p {
+  position: absolute;
+  left: 3%;
+  top: 32%;
+  width: 575px;
+  height: 121px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #ffffff;
+}
+
+.picture-left {
+  position: absolute;
+  max-width: 29%;
+  left: 3%;
+  top: 46%;
+}
+
+.left-side-content button {
+  padding: 16px 36px;
+  position: absolute;
+  left: 43px;
+  top: 84%;
+  background: #1e5631;
+  border-radius: 34px;
+  font-family: "Work Sans";
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.log-in {
+  position: absolute;
+  width: 30%;
+  height: 74%;
+  left: 35%;
+  top: 6%;
+  background: rgba(0, 0, 0, 0.36);
+}
+.log-in h1 {
+  position: absolute;
+  left: 9%;
+  top: 7%;
+  /* width: 531px; */
+  /* height: 96px; */
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 120%;
+  color: #ffffff;
+}
+.input-field {
+  display: inline-block;
+  /* gap: 10px; */
+  position: absolute;
+  bottom: 6%;
+  left: 5.5%;
+}
+.input-field input {
+  width: 90%;
+  height: 21%;
+  margin: 11px;
+  background: rgba(0, 0, 0, 0.36);
+  padding: 7px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: #ffffff;
+}
+.message-box {
+  position: relative;
+  left: -1%;
+}
+
+.message-box textarea {
+  width: 88%;
+  height: 102px;
+  margin: 20px;
+  background: rgba(0, 0, 0, 0.36);
+  padding: 10px;
+  resize: none;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: #ffffff;
+}
+.message-box textarea::-webkit-scrollbar {
+  display: none;
+}
+.button button {
+  width: 44%;
+  height: 54px;
+  background: #1e5631;
+  border-radius: 34px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.right-side-content h4 {
+  position: absolute;
+  right: 12%;
+  top: 5%;
+  width: 128px;
+  height: 38px;
+
+  font-family: "Sue Ellen Francisco";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 108.3%;
+  color: #ffffff;
+}
+
+.right-side-content h1 {
+  position: absolute;
+  right: 2%;
+  top: 11%;
+  font-family: "Shippori Mincho";
+  font-weight: 800;
+  font-size: 31px;
+  color: #ffffff;
+}
+
+.medicine {
+  position: absolute;
+  right: 15%;
+  top: 21%;
+  width: 16%;
+}
+
+img.meds {
+  max-width: 34%;
+  margin-left: 11%;
+}
+
+.medicine h2 {
+  position: absolute;
+  right: 35%;
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-size: 19px;
+  line-height: 120%;
+  color: #ffffff;
+}
+
+.medicine p {
+  position: absolute;
+  right: 9%;
+  top: 154%;
+  width: 211px;
+  font-family: "Work Sans";
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.Food {
+  position: absolute;
+  right: 2%;
+  top: 21%;
+}
+
+img.foods {
+  max-width: 34%;
+  margin-left: 19%;
+}
+
+.Food h2 {
+  position: absolute;
+  right: 22%;
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 19px;
+  color: #ffffff;
+}
+
+.Food p {
+  right: 35%;
+  bottom: -35%;
+  margin-top: 19%;
+  font-family: "Work Sans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+}
+
+.learn {
+  display: inline-block;
+  position: absolute;
+  right: 6%;
+  top: 42%;
+}
+
+img.learnImg {
+  max-width: 34%;
+}
+
+.learn h2 {
+  position: relative;
+  right: 18%;
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 120%;
+  color: #ffffff;
+}
+
+.learn p {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  margin-left: -24%;
+  color: #ffffff;
+}
+
+.care {
+  display: inline-block;
+  position: absolute;
+  right: 15%;
+  top: 63%;
+}
+
+img.careImg {
+  max-width: 55%;
+}
+
+.care h2 {
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  margin-left: -6%;
+  font-size: 19px;
+  line-height: 120%;
+  color: #ffffff;
+}
+
+.care p {
+  font-family: "Work Sans";
+  font-size: 17px;
+  margin-left: -15%;
+  color: #ffffff;
+}
+
+.clothes {
+  position: absolute;
+  right: -2%;
+  top: 66%;
+  margin: 0;
+}
+
+img.clothesImg {
+  max-width: 27%;
+}
+
+.clothes h2 {
+  margin-left: -11%;
+  font-family: "Shippori Mincho";
+  font-size: 19px;
+  color: #ffffff;
+}
+
+.clothes p {
+  font-size: 17px;
+  margin-left: -24%;
+  color: #ffffff;
+}

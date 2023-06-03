@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">
+          <img src="fixedMedia/logo2.png" class="logo"
+        /></a>
+        <a href="index.html" class="Visit">Visit Homepage</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <img src="fixedMedia/World.png" alt="" class="bgLogin" />
+
+        <div class="loginHeader">
+          <h1 class="login">Login</h1>
+          <p class="details">Please fill your details to login your account.</p>
+        </div>
+
+        <form action="#" action="">
+          <div class="inputs">
+            <div class="inputBox">
+              <input type="email" name="email" id="email" required />
+              <span class="user">Email</span>
+            </div>
+
+            <div class="inputBox">
+              <input type="password" name="password" id="password" required />
+              <span>Password</span>
+            </div>
+          </div>
+
+          <input type="checkbox" name="" id="remember" class="check" />
+          <span style="font-family: 'Roboto', sans-serif; font-size: 0.9rem"
+            >Remember me</span
+          >
+
+          <a
+            href="forgot.html"
+            style="
+              color: red;
+              font-family: 'Roboto', sans-serif;
+              margin-left: 4rem;
+              text-decoration: none;
+              font-size: 0.9rem;
+            "
+            >Forgot Password?</a
+          >
+
+          <br />
+          <br />
+
+          <button class="enter">Sign in</button>
+        </form>
+
+        <div class="captcha">
+          <div>
+            <input type="checkbox" name="" id="captchaCheck" />&nbsp;<span
+              >&nbsp;I'm not a robot</span
+            >
+          </div>
+          <img src="fixedMedia/captcha.jpg" alt="captcha" class="captchaPic" />
+        </div>
+
+        <div class="horizontal-line">
+          <span class="word">OR</span>
+        </div>
+
+        <div class="icons">
+          <a href=""><img src="fixedMedia/icons/fb.png" alt="facebook" id="facebook"/></a>
+          <a href=""><img src="fixedMedia/icons/google.png" alt="google" id="google"/></a>
+          <a href=""><img src="fixedMedia/icons/twitter.png" alt="twitter" id="twitter"/></a>
+          <a href=""><img src="fixedMedia/icons/in.png" alt="linkedin" id="microsoft"/></a>
+        </div>
+
+        <p class="terms">
+          By logging in, you agree to our
+          <a href="#" onclick="terms()">Terms and Conditions</a> and
+          <a href="#" onclick="privacy()">Privacy Policy</a>.
+        </p>
+      </section>
+    </main>
+    <div class="popup-overlay" id="popup" style="display: none">
+      <div class="popup-content" style="overflow-y: scroll; height: 520px">
+        <img
+          src="fixedMedia/volunter/back2.png"
+          alt="back"
+          class="backterm"
+          onclick="back();"
+        />
+        <img
+          src="fixedMedia/logo2.png"
+          alt="logo"
+          class="termsCon"
+          style="max-width: 13%"
+        />
+        <hr />
+        <h2>TERMS AND CONDITIONS</h2>
+        <p class="conditions">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Terms and Conditions
+          Agreement is a legally enforceable agreement between you ("You" or
+          "Your" whether an individual or a legal company, and Volunteer
+          Connect. These Terms of Conditions govern your access to and use of
+          Volunteer Connect's web sites, media, apps, in-app services, and any
+          other cloud services, including without limitation
+          <a href="mailto:www.volunteerconnect.org">www.volunteerconnect.org</a
+          >, web sites, and any media, software, programmes, services, tools,
+          features, databases, materials, content, features, products, apps,
+          in-app services, or information available or sold on or through it or
+          used in connection with it (collectively, the "services"), and you
+          agree to be bound by these terms of use by downloading, accessing, or
+          using any portion of the service you have accessed. If you do not
+          agree to these terms and conditions, Volunteer Connect will deny you
+          access to the service. In such a case, you are not permitted to access
+          or otherwise use the service and are directed to depart immediately.
+          Volunteer Connect has the right to amend, add, or delete elements of
+          these terms of service at any time, and such changes will be effective
+          immediately upon publication. It is your obligation to check the terms
+          of service prior to each use of the service, and you agree to any
+          changes by continuing to use the service.
+        </p>
+
+        <h2 class="service">SERVICE ACCESS AND USE LICENSE</h2>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The service you have
+          accessed, as well as all of its contents, are protected by copyright,
+          trademark, service mark, trade name, and other intellectual property
+          and are owned or controlled by Volunteer Connect, its affiliates, and
+          licensees. The service is licensed to you rather than sold to you.
+          Except for the limited license provided in these Terms and Conditions,
+          Volunteer Connect and its licensors maintain all right, title, and
+          interest in the Service and all intellectual rights in the Service,
+          including without limitation copyrights, patents, trademarks, service
+          marks, and trade names.
+        </p>
+        <p>
+          Volunteer Connect has the right to alter, stop, or cancel any
+          component of the service at any time.
+        </p>
+        <p>1. GRANT LICENSE.</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volunteer
+          Connect provides you with a personal, revocable, nonexclusive,
+          nontransferable license to use the service for personal, noncommercial
+          purposes, subject to your continuing compliance with these Terms of
+          Use.
+        </p>
+        <p>2. LIMITATIONS ON LICENSE.</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The license
+          granted to You in these Terms of Use is restricted as follows:
+        </p>
+        <div class="list1">
+          <ul>
+            <li>Limitations on Copying and Distribution.</li>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are permitted to download or
+              make copies of the downloadable items available on the Service,
+              but only for your personal, non-commercial use. It is important
+              that you retain and display all copyright, trademark, and other
+              notices found within those items.
+            </p>
+            <li>Limitations on Copying and Distribution.</li>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may use and access the Service
+              solely for personal, non-commercial purposes, in accordance with
+              the Terms of Use. Any use of the Service must adhere to these
+              terms. It is not permitted to engage in unauthorized activities
+              such as copying, storing, distributing, or modifying the Service
+              or its contents without explicit permission. Transferring or
+              allowing third-party use of the Service is also prohibited.
+              Furthermore, actions like automated access, hacking attempts, or
+              disrupting the Service's functioning are not allowed. Using the
+              Service unlawfully or in a manner that negatively impacts the
+              Volunteer Connect is strictly prohibited.
+            </p>
+            <li>Compliance with Applicable Law.</li>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is your sole responsibility to
+              ensure that your usage of the Service complies with all relevant
+              foreign, federal, state, and local laws, rules, and regulations.
+            </p>
+          </ul>
+        </div>
+        <p>3.USER OBLIGATIONS</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; By downloading,
+          accessing, or utilizing the Service to view information, submit
+          materials, or engage in any activity, you affirm that: (i) you are
+          either at least eighteen (18) years old or between thirteen (13) and
+          seventeen (17) years old with parental or legal guardian consent and
+          supervision; (ii) you have fulfilled any necessary registration
+          requirements and have not been previously restricted, suspended, or
+          terminated by Volunteer Connect; and (iii) you are not using someone
+          else's authorized user account without their permission.
+        </p>
+        <p>4. PASSWORDS; SECURITY.</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To access
+          certain parts of the Service, you must register as an authorized user
+          with a unique user name and password. It is important to keep your
+          Authorized User Credentials confidential and not share them with
+          others. You are responsible for the accuracy of your registration
+          information. Impersonating someone else or using credentials that
+          infringe upon rights or violate Volunteer Connect guidelines is
+          strictly prohibited. Ownership of your account and user name rests
+          with Volunteer Connect. Failure to comply with these requirements may
+          result in the suspension or termination of your access. Volunteer
+          Connect has the right to modify or delete Authorized User Credentials
+          as needed.
+        </p>
+        <p>
+          If you have any questions regarding privacy, please read our
+          <span
+            onclick="privacy()"
+            style="text-decoration: underline; cursor: pointer"
+            >Privacy Policy.</span
+          >
+        </p>
+        <br />
+        <span
+          onclick="privacy()"
+          style="cursor: pointer"
+          class="policyTo"
+          onclick="privacy()"
+          >Privacy Policy</span
+        >
+      </div>
+    </div>
+
+    <div id="privacy" style="display: none">
+      <div class="popup-overlay">
+        <div class="popup-content" style="overflow-y: scroll; height: 520px">
+          <img
+            src="fixedMedia/logo2.png"
+            alt="logo"
+            class="termsCon"
+            style="max-width: 13%"
+          />
+          <hr />
+          <h2>PRIVACY POLICY</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Volunteer Connect places great
+            importance on ensuring the accuracy and precision of your
+            information during processing. We have established procedures to
+            detect and rectify errors, and our systems undergo regular audits to
+            ensure secure and accurate processing of your information.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This policy may be
+            modified or revised at any time. You accept the practices outlined
+            in this Policy by accessing Volunteer Connect on one of our websites
+            or using one of our mobile application.
+          </p>
+
+          <h2 class="service">HOW WE SECURE DATA</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Our websites and mobile
+            apps offer convenient access to our services and provide information
+            about important opportunities and events organized by the Volunteer
+            Connect. We collect information from online visitors directly or
+            through third-party sources. This information is used to communicate
+            with our supporters and clients and process their transactions. We
+            do not share or sell this information to other organizations.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When you use our websites
+            or apps to contribute financially, register for classes or events,
+            volunteer, apply for jobs, purchase supplies, or schedule a donation
+            appointment, we may ask for relevant details like your name,
+            address, phone number(s), and transaction-related information.
+            Financial donations, class payments, or purchases require standard
+            credit card information.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We also gather
+            information about online visitors from external sources, assisting
+            us in engaging with those interested in participating in Volunteer
+            Connect activities or supporting our mission.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Furthermore, we collect
+            non-personal information through automated technologies like
+            cookies, pixels, and web beacons. This helps us improve the online
+            experience, enhance our websites, and understand visitor
+            preferences. It enables us to identify popular website sections,
+            visitor navigation patterns, and visit duration. If you prefer not
+            to have information collected through cookies, you can disable this
+            feature in your browser. However, please note that blocking cookies
+            may limit personalized content and affect the optimal functionality
+            of our website.
+          </p>
+          <h2 class="service">HOW WE USE YOUR INFORMATION</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We employ various
+            security measures to safeguard your data. We have implemented
+            physical, electronic, and procedural safeguards to prevent
+            unauthorized access and misuse of personally identifiable
+            information.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To ensure the security of
+            credit card transactions, we utilize multiple protective measures,
+            including encryption, access controls, network firewalls, and
+            physical security. These precautions significantly reduce the risk
+            of interception or unauthorized access to your credit card
+            information. When collaborating with other companies for credit card
+            processing, they also employ encryption and suitable security
+            measures.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; While it is impossible to
+            guarantee absolute security for websites and electronic data, we
+            continuously strive to maintain current and appropriate security
+            mechanisms to uphold the highest level of protection.
+          </p>
+          <h2 class="service">WE CARE ABOUT DOING IT RIGHT</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Volunteer Connect
+            places great importance on ensuring the accuracy and precision of
+            your information during processing. We have established procedures
+            to detect and rectify errors, and our systems undergo regular audits
+            to ensure secure and accurate processing of your information.
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you need to get in
+            touch with us to review your information or make any corrections,
+            please feel free to contact us.
+          </p>
+
+          <h2 class="service">CONTACT US ABOUT PRIVACY</h2>
+
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have questions
+            about this Privacy Policy, you may send us an email at
+            <a href="mailto:pricacyofficer@volunteerconnect.org"
+              >pricacyofficer@volunteerconnect.org</a
+            >
+            or write to:
+          </p>
+
+          <p>
+            Volunteer Connect <br />
+            Office of the General Counsel <br />
+            Col.E.L.De Leon St., Paranaque, <br />
+            Metro-Manila, Philippines <br />
+            Attention: Privacy Officer
+          </p>
+
+          <span style="cursor: pointer" class="policyTo" onclick="back()"
+            >Continue</span
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      function terms() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+      function back() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("privacy").style.display = "none";
+      }
+
+      function privacy() {
+        document.getElementById("privacy").style.display = "block";
+      }
+      // Function to close the pop-up box
+      // function closePopup() {
+      //   document.getElementById("popup").style.display = "none";
+      // }
+
+      // // Show the pop-up box on page load
+      // window.addEventListener("load", function () {
+      //   document.getElementById("popup").style.display = "block";
+      // });
+    </script>
+<script>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, OAuthProvider,FacebookAuthProvider, TwitterAuthProvider,} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+ apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
+ authDomain: "v-nect-registration.firebaseapp.com",
+ databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
+ projectId: "v-nect-registration",
+ storageBucket: "v-nect-registration.appspot.com",
+ messagingSenderId: "78346752196",
+ appId: "1:78346752196:web:30c5c7dad57250c96e7991",
+ measurementId: "G-Q5ZXK57J3Z"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+const microsoftProvider = new OAuthProvider('microsoft.com');
+const facebookProvider = new FacebookAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+   //MICROSOFT
+   microsoft.addEventListener('click',(e)=>{
+    signInWithPopup(auth, microsoftProvider)
+  .then((result) => {
+    // User is signed in.
+    // IdP data available in result.additionalUserInfo.profile.
+
+    // Get the OAuth access token and ID Token
+    const credential = OAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    const idToken = credential.idToken;
+    const user = result.user;
+    alert(user.displayName);
+  })
+  .catch((error) => {
+    // Handle error.
+  });
+});
+
+  // GOOGLE
+  google.addEventListener('click',(e)=>{
+    signInWithPopup(auth, googleProvider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      alert(user.displayName);
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+      alert(errorMessage);
+    });
+  
+  });
+
+  //FACEBOOK
+  facebook.addEventListener('click',(e)=>{
+  signInWithPopup(auth, facebookProvider)
+  .then((result) => {
+    // The signed-in user info.
+    const user = result.user;
+    alert(user.displayName);
+
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+    alert(errorMessage);
+
+    // ...
+  });
+});
+
+//TWITTER
+twitter.addEventListener('click', (e)=>{
+  signInWithPopup(auth, twitterProvider)
+  .then((result) => {
+    // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+    // You can use these server side with your app's credentials to access the Twitter API.
+    const credential = TwitterAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const secret = credential.secret;
+
+    // The signed-in user info.
+    const user = result.user;
+    alert(user.displayName);
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = TwitterAuthProvider.credentialFromError(error);
+    alert(errorMessage);
+    // ...
+  });
+});
+
+  login.addEventListener('click', ()=>{
+    var email = document.getElementById('Email').value;
+    var password = document.getElementById('Password').value;
+ 
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+    // Signed in 
+                const user = userCredential.user;
+ 
+                const dt = new Date();
+                update(ref(database, 'users/' + user.uid),{
+                    last_login: dt,
+                })
+                alert('User Logged In!');
+    // ...
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+ 
+            alert(errorMessage);
+        });
+ 
+    });
+    const user =auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        // ...
+        const uid = user.uid;
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+  
+    logout.addEventListener('click', ()=>{
+      signOut(auth).then(() => {
+          // Sign-out successful.
+          alert('User Logged out!');
+        }).catch((error) => {
+          // An error happened.
+          const errorMessage = error.message;
+  
+          alert(errorMessage);
+        });
+    });
+
+ </script>
+ 
+  </body>
+</html>

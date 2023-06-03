@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Vidaloka&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.back-button a {
+  position: absolute;
+  left: 2.86%;
+  right: 90.2%;
+  top: 2.87%;
+  bottom: 92.01%;
+  background: #4c9e2a;
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 0%;
+  color: white;
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border-radius: 25px;
+  padding-left: 42px;
+  padding-top: 15px;
+  text-decoration: none;
+}
+
+.back {
+  position: absolute;
+  width: auto;
+  height: 25px;
+  left: 3rem;
+  top: 1.5rem;
+}
+
+.picture {
+  position: absolute;
+  width: auto;
+  height: 400.98px;
+  left: 15rem;
+  top: 4rem;
+  box-shadow: 0px 10px 20px 15px rgb(173, 193, 179);
+}
+
+section h2 {
+  position: absolute;
+  left: 49%;
+  top: 10%;
+  width: 90px;
+  height: 38px;
+  font-family: "Sue Ellen Francisco";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 108.3%;
+  color: #1e5631;
+}
+
+section h1 {
+  position: absolute;
+  left: 49%;
+  top: 15%;
+  width: 494px;
+  height: 144px;
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 110%;
+  color: #000000;
+}
+
+section p {
+  position: absolute;
+  left: 49%;
+  top: 33%;
+  width: 494px;
+  height: 144px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 16px;
+  line-height: 130%;
+  color: #000000;
+}
+
+.bg {
+  position: absolute;
+  left: 49%;
+  top: 44%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 19px 21px;
+  gap: 10px;
+  width: 470px;
+  height: 54px;
+  background: #def1f0;
+}
+
+.bg p {
+  position: absolute;
+  left: -16%;
+  top: 31%;
+  width: 591px;
+  height: 26px;
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 15px;
+  line-height: 130%;
+
+  text-align: center;
+  color: #4c9e2a;
+}
+section button {
+  position: absolute;
+  left: 49%;
+  top: 55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 40px;
+  gap: 10px;
+  cursor: pointer;
+  width: 180px;
+  height: 55px;
+  background: #1e5631;
+  border-radius: 34px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 15px;
+  line-height: 21px;
+  text-transform: uppercase;
+  border: none;
+  color: #ffffff;
+}
+
+.quotes {
+  position: absolute;
+  left: 1rem;
+  top: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 55px 53px;
+  gap: 10px;
+  width: 364.96px;
+  height: 139.36px;
+  background: #1e5631;
+}
+.quotes p {
+  position: relative;
+  left: 31%;
+  top: 0%;
+
+  width: 277px;
+  height: 120px;
+
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 120%;
+
+  color: #ffffff;
+}
+.quotes img {
+  position: absolute;
+  left: 10%;
+  top: 26%;
+  width: auto;
+  height: 80.49px;
+
+  background: #ffffff;
+}
+.email {
+  position: absolute;
+  width: 578px;
+  height: 185px;
+  right: 1%;
+  bottom: 2%;
+  background: linear-gradient(
+    267.14deg,
+    #8ec281 -2.69%,
+    rgba(217, 217, 217, 0) 97.63%
+  );
+}
+.email h2 {
+  position: absolute;
+  width: 155px;
+  height: 38px;
+  right: 67%;
+  bottom: 72%;
+  font-family: "Sue Ellen Francisco";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 108.3%;
+  color: #000000;
+}
+.email h1 {
+  position: absolute;
+  width: 218px;
+  height: 48px;
+  right: 41%;
+  bottom: 65%;
+
+  font-family: "Shippori Mincho";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 120%;
+
+  color: #000000;
+}
+.email p {
+  position: absolute;
+  width: 509px;
+  height: 77px;
+  right: 18%;
+  bottom: 22%;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 130%;
+
+  color: #000000;
+}
+
+.email input {
+  position: absolute;
+  width: 394px;
+  height: 51px;
+  right: 22%;
+  bottom: 8%;
+  background: #ffffff;
+  border-radius: 34px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 130%;
+  border: none;
+  padding: 20px;
+  color: #1a1919;
+}
+.email button {
+  position: absolute;
+  width: 92px;
+  height: 51px;
+  right: 4%;
+  bottom: 8%;
+  background: #1e5631;
+  border-radius: 65px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+
+  color: #ffffff;
+}

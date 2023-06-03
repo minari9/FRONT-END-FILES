@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">
+          <img src="fixedMedia/logo2.png" class="logo"
+        /></a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <img src="fixedMedia/World.png" alt="" class="bgLogin" />
+
+        <div class="loginHeader">
+          <h1 class="login">Change Password</h1>
+          <span class="details"
+            >Protect your privacy and change your <br />
+            password now.
+          </span>
+        </div>
+
+        <form action="success.html" action="">
+          <div class="inputs forgotPass">
+            <div class="inputBox" id="passRes">
+              <input type="password" name="oldPass" id="oldPass" required />
+              <span class="user">Enter old password</span>
+            </div>
+            <div class="inputBox" id="passRes">
+              <input type="password" name="newPass" id="newPass" required />
+              <span class="user">Enter new password</span>
+            </div>
+            <div class="inputBox" id="passRes">
+              <input type="password" name="conPass" id="conPass" required />
+              <span class="user">Confirm password</span>
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <button class="enter continue">Continue</button>
+        </form>
+        <br />
+      </section>
+    </main>
+  </body>
+</html>
