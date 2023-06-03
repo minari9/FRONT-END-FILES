@@ -260,8 +260,8 @@
             const auth = getAuth(app);
           
             signIn.addEventListener("click", () => {
-              var username = document.getElementById("fullname").value;
-              var phone = document.getElementById("number").value;
+              var fullname = document.getElementById("fullname").value;
+              var number = document.getElementById("number").value;
               var email = document.getElementById("email").value;
               var password = document.getElementById("password").value;
           
@@ -278,7 +278,7 @@
                   set(ref(database, `users/` + user.uid), {
                     fullname: username,
                     email: email,
-                    phone: phone,
+                    number: number,
                   });
           
                   alert('User Created');
