@@ -61,8 +61,8 @@
           </div>
 
           <br />
-          <button class="enter">Sign in</button>
-        </form>
+          <button class="enter" id="signIn">Sign in</button>
+        <!-- </form>
         <br />
         <br />
         <br />
@@ -214,15 +214,15 @@
               >
             </p>
             <br />
-            <span
-              onclick="back()"
+            <span -->
+              <!-- onclick="back()"
               style="cursor: pointer"
               class="policyTo"
               onclick="back()"
               >Continue</span
             >
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
     <script>
@@ -260,7 +260,7 @@
         const database = getDatabase(app);
         const auth = getAuth(app);
 
-        signUp.addEventListener('click',()=>{
+        signIn.addEventListener('click',()=>{
 
         var username = document.getElementById('fullname').value;
         var email = document.getElementById('phone').value;
