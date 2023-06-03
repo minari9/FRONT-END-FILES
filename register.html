@@ -10,6 +10,9 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js"></script>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
       import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
@@ -125,7 +128,6 @@
         <a href="index.html" class="Visit">Visit Homepage</a>
       </nav>
     </header>
-
     <main>
       <section>
         <img src="fixedMedia/World.png" alt="" class="bgLogin" />
@@ -156,7 +158,7 @@
             </div>
             <div class="inputBox">
               <input
-                type="password"
+                type="Conpassword"
                 name="Conpassword"
                 id="Conpassword"
                 required
@@ -166,12 +168,16 @@
           </div>
 
           <br />
-          <button class="enter" id="signIn">Sign in</button>
+          <button class="enter">Sign in</button>
         </form>
+        <br />
+        <br />
+        <br />
+        <p class="already">
+          Already have an account? <a href="login.html">Log in</a>.
+        </p>
       </section>
     </main>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js"></script>
+ 
   </body>
 </html>
