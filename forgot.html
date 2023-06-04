@@ -40,11 +40,8 @@
             </div>
           </div>
           <br />
-          <button class="enter enterLink">Send Login Link</button>
+          <button id="submit" class="enter enterLink">Send Login Link</button>
         </form>
-        <br />
-        <a href="#" class="cantReset">Can't reset your password?</a>
-        <br />
         <br />
         <br />
         <span class="forgotOR">OR</span>
@@ -60,5 +57,39 @@
         <a href="login.html" class="enter enterLink">Back to Login</a>
       </section>
     </main>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+      import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
+        authDomain: "v-nect-registration.firebaseapp.com",
+        databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "v-nect-registration",
+        storageBucket: "v-nect-registration.appspot.com",
+        messagingSenderId: "78346752196",
+        appId: "1:78346752196:web:30c5c7dad57250c96e7991",
+        measurementId: "G-Q5ZXK57J3Z"
+      };
+
+      let submit_data = document.getElementById('submit');
+      let forgotEmail = document.getElementById('email');
+
+      const auth = getAuth(app);
+
+      submit_data.addEventListener("click", ()=>{
+        sendPasswordResetEmail(auth, forgotEmail.value)
+        .then(()=>{
+          swal("Password Reset Link has been sent to your Email");
+        })
+        .catch((error)=>{
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          swal('Sorry! Please enter correct Email')
+        });
+      })
+    </script>
   </body>
 </html>
