@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body>
     <header>
@@ -40,7 +41,7 @@
             </div>
           </div>
           <br />
-          <button id="submit" class="enter enterLink">Send assword Reset Link</button>
+          <button id="submit" class="enter enterLink">Send Password Reset Link</button>
         </form>
         <br />
         <br />
@@ -74,7 +75,7 @@
       };
 
       let submit_data = document.getElementById('submit');
-      let forgotEmail = document.querySelector('.forgotPass input[name="email"]');
+      let forgotEmail = document.querySelector('.inputs input[name="email"]');
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
