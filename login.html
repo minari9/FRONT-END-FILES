@@ -406,7 +406,8 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
+  const database = getDatabase(app);
+  const auth = getAuth(app);
   document.getElementById("login").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent form submission
 
@@ -417,6 +418,13 @@
     // Sign in the user
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function(userCredential) {
+            const user = userCredential.user;
+    
+            const database = new Date();
+            update(ref(database, 'users/' + user.uid),{
+                last_login: dt,
+            })
+            alert('User Logged In!');
         // Login successful, do something (e.g., redirect to another page)
       })
       .catch(function(error) {
