@@ -71,10 +71,10 @@
         </div>
 
         <div class="icons">
-          <a href=""><img src="fixedMedia/icons/fb.png" alt="facebook" id="facebook"/></a>
-          <a href=""><img src="fixedMedia/icons/google.png" alt="google" id="google"/></a>
-          <a href=""><img src="fixedMedia/icons/twitter.png" alt="twitter" id="twitter"/></a>
-          <a href=""><img src="fixedMedia/icons/in.png" alt="linkedin" id="microsoft"/></a>
+          <a> <img src="fixedMedia/icons/fb.png" alt="facebook" id="facebook"/></a>
+          <a> <img src="fixedMedia/icons/google.png" alt="google" id="google"/></a>
+          <a> <img src="fixedMedia/icons/twitter.png" alt="twitter" id="twitter"/></a>
+          <a> <img src="fixedMedia/icons/in.png" alt="linkedin" id="microsoft"/></a>
         </div>
 
         <p class="terms">
@@ -433,9 +433,6 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
     signInWithPopup(auth, microsoftProvider)
   .then((result) => {
     // User is signed in.
-    // IdP data available in result.additionalUserInfo.profile.
-
-    // Get the OAuth access token and ID Token
     const credential = OAuthProvider.credentialFromResult(result);
     const accessToken = credential.accessToken;
     const idToken = credential.idToken;
