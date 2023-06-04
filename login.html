@@ -424,8 +424,8 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
         })
         .catch((error) => {
             const errorMessage = error.message;
-
-            alert('Please Confirm your Email')
+                
+            alert(errorMessage);
         });
  
     });
