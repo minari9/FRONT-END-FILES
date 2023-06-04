@@ -389,53 +389,6 @@
       //   document.getElementById("popup").style.display = "block";
       // });
     </script>
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
-    authDomain: "v-nect-registration.firebaseapp.com",
-    databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "v-nect-registration",
-    storageBucket: "v-nect-registration.appspot.com",
-    messagingSenderId: "78346752196",
-    appId: "1:78346752196:web:30c5c7dad57250c96e7991",
-    measurementId: "G-Q5ZXK57J3Z"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-  const auth = getAuth(app);
-  document.getElementById("login").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Retrieve user input
-    var email = document.getElementById("Email").value;
-    var password = document.getElementById("Password").value;
-
-    // Sign in the user
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(function(userCredential) {
-            const user = userCredential.user;
-    
-            const database = new Date();
-            update(ref(database, 'users/' + user.uid),{
-                last_login: dt,
-            })
-            alert('User Logged In!');
-        // Login successful, do something (e.g., redirect to another page)
-      })
-      .catch(function(error) {
-        // Handle login error, display error message to the user
-        var errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  });
-</script>
-
-
  
   </body>
 </html>
