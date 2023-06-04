@@ -389,21 +389,24 @@
       //   document.getElementById("popup").style.display = "block";
       // });
     </script>
-<script>
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 
-const firebaseConfig = {
- apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
- authDomain: "v-nect-registration.firebaseapp.com",
- databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
- projectId: "v-nect-registration",
- storageBucket: "v-nect-registration.appspot.com",
- messagingSenderId: "78346752196",
- appId: "1:78346752196:web:30c5c7dad57250c96e7991",
- measurementId: "G-Q5ZXK57J3Z"
-};
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
+    authDomain: "v-nect-registration.firebaseapp.com",
+    databaseURL: "https://v-nect-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "v-nect-registration",
+    storageBucket: "v-nect-registration.appspot.com",
+    messagingSenderId: "78346752196",
+    appId: "1:78346752196:web:30c5c7dad57250c96e7991",
+    measurementId: "G-Q5ZXK57J3Z"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
   document.getElementById("login").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent form submission
 
@@ -422,8 +425,9 @@ const firebaseConfig = {
         console.log(errorMessage);
       });
   });
+</script>
 
- </script>
+
  
   </body>
 </html>
