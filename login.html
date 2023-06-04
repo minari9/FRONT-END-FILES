@@ -404,59 +404,24 @@ const firebaseConfig = {
  appId: "1:78346752196:web:30c5c7dad57250c96e7991",
  measurementId: "G-Q5ZXK57J3Z"
 };
+  document.getElementById("login").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const auth = getAuth(app);
- 
-  login.addEventListener('click', ()=>{
-    var email = document.getElementById('Email').value;
-    var password = document.getElementById('Password').value;
- 
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-    // Signed in 
-                const user = userCredential.user;
- 
-                const dt = new Date();
-                update(ref(database, 'users/' + user.uid),{
-                    last_login: dt,
-                })
-                alert('User Logged In!');
-    // ...
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
- 
-            alert(errorMessage);
-        });
- 
-    });
-    const user =auth.currentUser;
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // ...
-        const uid = user.uid;
-      } else {
-        // User is signed out
-        // ...
-      }
-    });
-  
-    logout.addEventListener('click', ()=>{
-      signOut(auth).then(() => {
-          // Sign-out successful.
-          alert('User Logged out!');
-        }).catch((error) => {
-          // An error happened.
-          const errorMessage = error.message;
-  
-          alert(errorMessage);
-        });
-    });
+    // Retrieve user input
+    var email = document.getElementById("Email").value;
+    var password = document.getElementById("Password").value;
+
+    // Sign in the user
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function(userCredential) {
+        // Login successful, do something (e.g., redirect to another page)
+      })
+      .catch(function(error) {
+        // Handle login error, display error message to the user
+        var errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  });
 
  </script>
  
