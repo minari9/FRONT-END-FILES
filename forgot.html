@@ -40,7 +40,7 @@
             </div>
           </div>
           <br />
-          <button id="submit" class="enter enterLink">Send Password Reset Link</button>
+          <button id="submit" class="enter enterLink">Send assword Reset Link</button>
         </form>
         <br />
         <br />
@@ -74,8 +74,9 @@
       };
 
       let submit_data = document.getElementById('submit');
-      let forgotEmail = document.querySelector('.forgotEmail');
+      let forgotEmail = document.querySelector('.forgotPass input[name="email"]');
 
+      const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
       submit_data.addEventListener("click", ()=>{
