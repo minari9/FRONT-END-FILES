@@ -27,7 +27,7 @@
 
         <div class="loginHeader">
           <h1 class="login">Login</h1>
-          <p class="details">lease fill your details to login your account.</p>
+          <p class="details">Please fill your details to login your account.</p>
         </div>
 
         <form action="#" action="">
@@ -425,6 +425,25 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
         });
  
     });
+
+  //MICROSOFT
+  microsoft.addEventListener('click',(e)=>{
+    signInWithPopup(auth, microsoftProvider)
+  .then((result) => {
+    // User is signed in.
+    // IdP data available in result.additionalUserInfo.profile.
+
+    // Get the OAuth access token and ID Token
+    const credential = OAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    const idToken = credential.idToken;
+    const user = result.user;
+    alert(user.displayName);
+  })
+  .catch((error) => {
+    // Handle error.
+  });
+});
 </script>
   </body>
 </html>
