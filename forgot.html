@@ -49,7 +49,7 @@
         <br />
         <br />
         <br />
-        <a href="register.html" class="createAcc">Create new account</a>
+        <a href="register.html" class="createAcc">reate new account</a>
         <br />
         <br />
         <br />
@@ -81,17 +81,19 @@
       const auth = getAuth(app);
 
       submit_data.addEventListener("click", ()=>{
-        sendPasswordResetEmail(auth, forgotEmail.value)
-        .then(()=>{
-          alert("Password Reset Link has been sent to your Email");
-        })
-        .catch((error)=>{
-          const errorCode = error.code;
-          const errorMessage = error.message;
+        console.log("Sending password reset email...");
+          sendPasswordResetEmail(auth, forgotEmail.value)
+            .then(() => {
+              alert("Password Reset Link has been sent to your Email");
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
 
-          alert('Sorry! Please enter correct Email')
-        });
-      })
+              alert('Sorry! Please enter correct Email');
+            });
+          });
+
     </script>
   </body>
 </html>
