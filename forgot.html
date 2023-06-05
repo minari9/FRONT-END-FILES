@@ -41,7 +41,7 @@
             </div>
           </div>
           <br />
-          <button id="submit" class="enter enterLink">Send Password Reset Link</button>
+          <button id="resetButton" onclick="sendPasswordResetEmail()">Send Password Reset Email</button>
         </form>
         <br />
         <br />
@@ -62,7 +62,7 @@
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
       import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-      import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+      import { getAuth, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
     
       const firebaseConfig = {
         apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
@@ -75,49 +75,29 @@
         measurementId: "G-Q5ZXK57J3Z"
       };
     
-      document.addEventListener("DOMContentLoaded", () => {
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const database = getDatabase(app);
-    
-      let submitButton = document.getElementById("submit");
-      let emailInput = document.querySelector("#email");
-    
-      submitButton.addEventListener("click", () => {
-        event.preventDefault();
-        signInWithEmailAndPassword(auth, emailInput.value)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            onAuthStateChanged(auth, (user) => {
-              if (user) {
-                user.getIdTokenResult()
-                  .then((idTokenResult) => {
-                    if (idTokenResult.claims.email_verified) {
-                      // Email is verified, proceed with sending the reset email
-                      const dt = new Date();
-                      update(ref(database, 'users/' + user.uid), {
-                        last_login: dt,
-                      });
-                      sendPasswordResetEmail(auth, emailInput.value)
-                        .then(() => {
-                          emailInput.value = "";
-                          // Password reset email sent!
-                          alert('Password reset email sent!');
-                        })
-                        .catch((error) => {
-                          // Handle errors here
-                          console.log(error);
-                        });
-                    } else {
-                      // Email is not verified
-                      alert('Please verify your email before requesting a password reset.');
-                    }
-                  });
-              }
-            });
-        })
-        });
-      });
+      function sendPasswordResetEmail() {
+  // Get the input email
+  const emailInput = document.getElementById("email").value;
+
+  // Validate the email address
+  if (!emailInput) {
+    alert("Please enter an email address.");
+    return;
+  }
+
+  // Send password reset email
+  const auth = firebase.auth();
+  auth
+    .sendPasswordResetEmail(emailInput)
+    .then(() => {
+      // Password reset email sent
+      alert("Password reset email sent to " + emailInput);
+    })
+    .catch((error) => {
+      // Handle errors here
+      alert("Error sending password reset email: " + error.message);
+    });
+}
     </script>
       </body>
 </html>
