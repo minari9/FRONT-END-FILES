@@ -80,7 +80,7 @@
       let Enter = document.getElementById("submit");
       let InputEmail = document.querySelector("email");
 
-      Enter.addEventLister('click', ()=>{
+      Enter.addEventListener('click', ()=>{
         sendPasswordResetEmail(auth, InputEmail.value)
           .then(() => {
             // Password reset email sent!
