@@ -76,8 +76,12 @@
       // Initialize Firebase app
       const app = initializeApp(firebaseConfig);
       const auth = getAuth();
-      submit.addEventLister('click', ()=>{
-        sendPasswordResetEmail(auth, email)
+
+      let Enter = document.getElementById(submit);
+      let InputEmail = document.querySelector(email);
+
+      Enter.addEventLister('click', ()=>{
+        sendPasswordResetEmail(auth, email.value)
           .then(() => {
             // Password reset email sent!
             alert('Password reset email sent!')
