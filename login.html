@@ -405,21 +405,6 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
       const twitterProvider = new TwitterAuthProvider();
       const googleProvider = new GoogleAuthProvider();
 
-  function verifyEmail() {
-  const email = document.getElementById('Email').value;
-  const emailError = document.getElementById('email-error');
-
-  // Check if the email is verified (example condition)
-  const isEmailVerified = false; // Replace with your own verification logic
-
-  if (!isEmailVerified) {
-    emailError.textContent = 'Please verify your email first.';
-    emailError.style.display = 'block';
-    return; // Stop the login process
-  }
-
-  // Email is verified, continue with the login process
-  // Add your login code here
   login.addEventListener('click', ()=>{
     var email = document.getElementById('Email').value;
     var password = document.getElementById('Password').value;
@@ -442,11 +427,7 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
             alert(errorMessage);
         });
  
-    });
-}
-
-
-    
+    });   
 
   //MICROSOFT
   microsoft.addEventListener('click',(e)=>{
