@@ -41,7 +41,7 @@
             </div>
           </div>
           <br />
-          <button id="resetButton" onclick="sendPasswordResetEmail()">Send Password Reset Email</button>
+          <button id="submit" class="enter enterLink">Send Password Reset Link</button>
         </form>
         <br />
         <br />
@@ -74,30 +74,33 @@
         appId: "1:78346752196:web:30c5c7dad57250c96e7991",
         measurementId: "G-Q5ZXK57J3Z"
       };
-    
-      function sendPasswordResetEmail() {
-  // Get the input email
-  const emailInput = document.getElementById("email").value;
+      firebase.initializeApp(firebaseConfig);
 
-  // Validate the email address
-  if (!emailInput) {
-    alert("Please enter an email address.");
-    return;
-  }
+        // Add event listener to the submit button
+        const submitButton = document.getElementById("submit");
+        submitButton.addEventListener("click", sendPasswordResetEmail);
 
-  // Send password reset email
-  const auth = firebase.auth();
-  auth
-    .sendPasswordResetEmail(emailInput)
-    .then(() => {
-      // Password reset email sent
-      alert("Password reset email sent to " + emailInput);
-    })
-    .catch((error) => {
-      // Handle errors here
-      alert("Error sending password reset email: " + error.message);
-    });
-}
+        function sendPasswordResetEmail(e) {
+          e.preventDefault();
+
+          const emailInput = document.getElementById("email").value;
+
+          if (!emailInput) {
+            alert("Please enter an email address.");
+            return;
+          }
+
+          firebase
+            .auth()
+            .sendPasswordResetEmail(emailInput)
+            .then(() => {
+              alert("Password reset email sent to " + emailInput);
+            })
+            .catch((error) => {
+              alert("Error sending password reset email: " + error.message);
+            });
+        }
+
     </script>
       </body>
 </html>
