@@ -55,7 +55,7 @@
         <br />
         <br />
         <br />
-        <a href="login.html" class="enter enterLink">Back to Login</a>
+        <a href="login.html" class="enter enterLink">ack to Login</a>
       </section>
     </main>
 
@@ -81,15 +81,9 @@
       const emailInput = document.querySelector("email");
 
       submitButton.addEventListener("click", () => {
-        const email = emailInput.value;
-
-        fetchSignInMethodsForEmail(auth, email)
-          .then((signInMethods) => {
-            if (signInMethods.length === 0) {
-              alert("The email entered is not registered with Firebase Authentication");
-            } else {
-              sendPasswordResetEmail(auth, email)
+              sendPasswordResetEmail(auth, email.value)
                 .then(() => {
+                  email = ""
                   alert("Password Reset Link has been sent to your Email");
                 })
                 .catch((error) => {
@@ -97,9 +91,7 @@
                   const errorMessage = error.message;
                   alert(`Password Reset Failed: ${errorMessage}`);
                 });
-            }
-          })
-      });
+            })
     </script>
   </body>
 </html>
