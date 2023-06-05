@@ -81,7 +81,7 @@
       let emailInput = document.querySelector("email");
 
       submitButton.addEventListener("click", () => {
-          sendPasswordResetEmail(auth, emailInput.value)
+          sendPasswordResetEmail(auth, email.value)
             .then(() => {
               emailInput = "";
               // Password reset email sent!
