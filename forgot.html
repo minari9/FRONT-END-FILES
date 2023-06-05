@@ -81,7 +81,7 @@
       let InputEmail = document.querySelector(email);
 
       Enter.addEventLister('click', ()=>{
-        sendPasswordResetEmail(auth, email.value)
+        sendPasswordResetEmail(auth, InputEmail.value)
           .then(() => {
             // Password reset email sent!
             alert('Password reset email sent!')
