@@ -81,18 +81,30 @@
       let emailInput = document.querySelector("email");
 
       submitButton.addEventListener("click", () => {
-          sendPasswordResetEmail(auth, email.value)
-            .then(() => {
-              emailInput = "";
-              // Password reset email sent!
-              alert('Password reset email sent!')
-              // ..
-            })
-            .catch((error) => {
-              const errorMessage = error.message;
-              alert(errorMessage)
-              // ..
-            });
+        signInWithEmailAndPassword(auth, email)
+          .then((userCredential) => {
+            const user = userCredential.user;
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                  if (user.emailVerified) {
+                    const dt = new Date();
+                    update(ref(database, 'users/' + user.uid), {
+                      last_login: dt,
+                    });
+                    sendPasswordResetEmail(auth, email.value)
+                      .then(() => {
+                        emailInput = "";
+                        // Password reset email sent!
+                        alert('Password reset email sent!')
+                        // ..
+                      })
+                  } else {
+                    alert('Invalid Email')
+                  }
+                }
+              });
+          });
         });
     </script>
   </body>
