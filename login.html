@@ -63,7 +63,7 @@
           <br />
           <br />
 
-          <button class="enter" id="login">Sign in</button>
+          <button class="enter" id="login" onclick="verifyEmail()">Sign in</button>
         </form>
 
         <div class="horizontal-line">
@@ -351,9 +351,8 @@
             Attention: Privacy Officer
           </p>
 
-          <span style="cursor: pointer" class="policyTo" onclick="back()"
-            >Continue</span
-          >
+          <span style="cursor: pointer" class="policyTo" onclick="back()">Continue</span>
+          <span id="email-error" class="error-message"></span>
         </div>
       </div>
     </div>
@@ -406,7 +405,22 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
       const twitterProvider = new TwitterAuthProvider();
       const googleProvider = new GoogleAuthProvider();
 
-    login.addEventListener('click', ()=>{
+  function verifyEmail() {
+  const email = document.getElementById('Email').value;
+  const emailError = document.getElementById('email-error');
+
+  // Check if the email is verified (example condition)
+  const isEmailVerified = false; // Replace with your own verification logic
+
+  if (!isEmailVerified) {
+    emailError.textContent = 'Please verify your email first.';
+    emailError.style.display = 'block';
+    return; // Stop the login process
+  }
+
+  // Email is verified, continue with the login process
+  // Add your login code here
+  login.addEventListener('click', ()=>{
     var email = document.getElementById('Email').value;
     var password = document.getElementById('Password').value;
  
@@ -429,6 +443,10 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
         });
  
     });
+}
+
+
+    
 
   //MICROSOFT
   microsoft.addEventListener('click',(e)=>{
