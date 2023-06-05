@@ -83,13 +83,13 @@
       submit_data.addEventListener("click", ()=>{
         sendPasswordResetEmail(auth, forgotEmail.value)
         .then(()=>{
-          swal("Password Reset Link has been sent to your Email");
+          alert("Password Reset Link has been sent to your Email");
         })
         .catch((error)=>{
           const errorCode = error.code;
           const errorMessage = error.message;
 
-          swal('Sorry! Please enter correct Email')
+          alert('Sorry! Please enter correct Email')
         });
       })
     </script>
