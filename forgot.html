@@ -74,32 +74,31 @@
         appId: "1:78346752196:web:30c5c7dad57250c96e7991",
         measurementId: "G-Q5ZXK57J3Z"
       };
+      // Initialize Firebase app
       firebase.initializeApp(firebaseConfig);
 
-        // Add event listener to the submit button
-        const submitButton = document.getElementById("submit");
-        submitButton.addEventListener("click", sendPasswordResetEmail);
+      // Add event listener to the submit button
+      const submitButton = document.getElementById("submit");
+      submitButton.addEventListener("click", function (e) {
+        e.preventDefault();
 
-        function sendPasswordResetEmail(e) {
-          e.preventDefault();
+        const emailInput = document.getElementById("email").value;
 
-          const emailInput = document.getElementById("email").value;
-
-          if (!emailInput) {
-            alert("Please enter an email address.");
-            return;
-          }
-
-          firebase
-            .auth()
-            .sendPasswordResetEmail(emailInput)
-            .then(() => {
-              alert("Password reset email sent to " + emailInput);
-            })
-            .catch((error) => {
-              alert("Error sending password reset email: " + error.message);
-            });
+        if (!emailInput) {
+          alert("Please enter an email address.");
+          return;
         }
+
+        firebase
+          .auth()
+          .sendPasswordResetEmail(emailInput)
+          .then(() => {
+            alert("Password reset email sent to " + emailInput);
+          })
+          .catch((error) => {
+            alert("Error sending password reset email: " + error.message);
+          });
+      });
 
     </script>
       </body>
