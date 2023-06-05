@@ -61,7 +61,8 @@
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-      import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+      import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+      import { getAuth, sendPasswordResetEmail,  signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
       const firebaseConfig = {
         apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
@@ -76,6 +77,7 @@
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
+      const database = getDatabase(app);
 
       let submitButton = document.getElementById("submit");
       let emailInput = document.querySelector("email");
