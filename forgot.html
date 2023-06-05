@@ -78,7 +78,7 @@
       const auth = getAuth(app);
 
       let Enter = document.getElementById("submit");
-      let InputEmail = document.querySelector("email");
+      let InputEmail = document.querySelector("#email");
 
       Enter.addEventListener('click', ()=>{
         sendPasswordResetEmail(auth, InputEmail.value)
