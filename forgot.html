@@ -60,10 +60,9 @@
     </main>
 
     <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-      import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-      import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-      
+           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import { getAuth, fetchSignInMethodsForEmail, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
       const firebaseConfig = {
         apiKey: "AIzaSyDNQAcisehSD9ozX_Vzc4o54gdOxP2K3YM",
         authDomain: "v-nect-registration.firebaseapp.com",
@@ -76,7 +75,6 @@
       };
 
       const app = initializeApp(firebaseConfig);
-      const database = getDatabase(app);
       const auth = getAuth(app);
 
       const submitButton = document.getElementById("submit");
@@ -85,11 +83,11 @@
       submitButton.addEventListener("click", () => {
         const email = emailInput.value;
 
-        // Check if the email is registered with Firebase Authentication
-        const usersRef = ref(database, 'users');
-        get(child(usersRef, email.replace('.', ',')))
-          .then((snapshot) => {
-            if (snapshot.exists()) {
+        fetchSignInMethodsForEmail(auth, email)
+          .then((signInMethods) => {
+            if (signInMethods.length === 0) {
+              alert("The email entered is not registered with Firebase Authentication");
+            } else {
               sendPasswordResetEmail(auth, email)
                 .then(() => {
                   alert("Password Reset Link has been sent to your Email");
@@ -99,8 +97,6 @@
                   const errorMessage = error.message;
                   alert(`Password Reset Failed: ${errorMessage}`);
                 });
-            } else {
-              alert("The email entered is not registered with Firebase Authentication");
             }
           })
           .catch((error) => {
@@ -109,7 +105,6 @@
             alert(`Email Verification Failed: ${errorMessage}`);
           });
       });
-      
     </script>
   </body>
 </html>
