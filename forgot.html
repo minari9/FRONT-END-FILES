@@ -87,37 +87,36 @@
         signInWithEmailAndPassword(auth, emailInput.value)
           .then((userCredential) => {
             const user = userCredential.user;
-    
             onAuthStateChanged(auth, (user) => {
               if (user) {
-                if (user.emailVerified) {
-                  const dt = new Date();
-                  update(ref(database, 'users/' + user.uid), {
-                    last_login: dt,
+                user.getIdTokenResult()
+                  .then((idTokenResult) => {
+                    if (idTokenResult.claims.email_verified) {
+                      // Email is verified, proceed with sending the reset email
+                      const dt = new Date();
+                      update(ref(database, 'users/' + user.uid), {
+                        last_login: dt,
+                      });
+                      sendPasswordResetEmail(auth, emailInput.value)
+                        .then(() => {
+                          emailInput.value = "";
+                          // Password reset email sent!
+                          alert('Password reset email sent!');
+                        })
+                        .catch((error) => {
+                          // Handle errors here
+                          console.log(error);
+                        });
+                    } else {
+                      // Email is not verified
+                      alert('Please verify your email before requesting a password reset.');
+                    }
                   });
-                  sendPasswordResetEmail(auth, emailInput.value)
-                    .then(() => {
-                      emailInput.value = "";
-                      // Password reset email sent!
-                      alert('Password reset email sent!');
-                      // ..
-                    })
-                    .catch((error) => {
-                      // Handle errors here
-                      console.log(error);
-                    });
-                } else {
-                  alert('Invalid Email');
-                }
               }
             });
-          })
-          .catch((error) => {
-            // Handle errors here
-            console.log(error);
-          });
+        })
+        });
       });
-    });
     </script>
       </body>
 </html>
