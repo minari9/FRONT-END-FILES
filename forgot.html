@@ -84,6 +84,7 @@
       let emailInput = document.querySelector("#email");
     
       submitButton.addEventListener("click", () => {
+        event.preventDefault();
         signInWithEmailAndPassword(auth, emailInput.value)
           .then((userCredential) => {
             const user = userCredential.user;
