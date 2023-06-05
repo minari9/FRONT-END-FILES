@@ -88,12 +88,27 @@
       const database = getDatabase(app);
       const auth = getAuth(app);
 
+    const signUpFunction = () => {
+    const email = email.value;
+    const password = password.value;
+
+    //Built in firebase function responsible for signing up a user
+    auth.createUserWithEmailAndPassword(email, password)
+    .then(() => {
+        console.log('Signed Up Successfully !');
+        sendVerificationEmail();
+    })
+    .catch(error => {
+        console.error(error);
+    })
+}
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           sendEmailVerification(auth.currentUser)
             .then(() => {
               // Email verification sent!
-              alert('Please Confirm your Email')  
+              alert('Email Confirmation Link was sent to your email')  
+              window.location.assign('../success');
               // ...
             });
 
