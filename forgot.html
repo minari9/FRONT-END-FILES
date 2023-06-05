@@ -74,10 +74,10 @@
         measurementId: "G-Q5ZXK57J3Z"
       };
          // Initialize Firebase app
-         firebase.initializeApp(firebaseConfig);
+         const app = initializeApp(firebaseConfig);
 
           // Get the auth object
-          const auth = firebase.auth();
+          const auth = getAuth(app);
 
           // Add event listener to the submit button
           const enterButton = document.getElementById("submit");
