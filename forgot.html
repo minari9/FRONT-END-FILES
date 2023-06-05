@@ -55,7 +55,7 @@
         <br />
         <br />
         <br />
-        <a href="login.html" class="enter enterLink">Back to Login</a>
+        <a href="login.html" class="enter enterLink">vack to Login</a>
       </section>
     </main>
 
@@ -75,6 +75,7 @@
         measurementId: "G-Q5ZXK57J3Z"
       };
     
+      document.addEventListener("DOMContentLoaded", () => {
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       const database = getDatabase(app);
@@ -116,6 +117,7 @@
             console.log(error);
           });
       });
+    });
     </script>
       </body>
 </html>
