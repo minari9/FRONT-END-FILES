@@ -73,33 +73,29 @@
         appId: "1:78346752196:web:30c5c7dad57250c96e7991",
         measurementId: "G-Q5ZXK57J3Z"
       };
-         // Initialize Firebase app
-         const app = initializeApp(firebaseConfig);
+      // Initialize Firebase app
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-          // Get the auth object
-          const auth = getAuth(app);
+      let Enter = document.getElementById("submit");
+      let InputEmail = document.querySelector("#email");
 
-          // Add event listener to the submit button
-          const enterButton = document.getElementById("submit");
-          const emailInput = document.getElementById("email");
+      Enter.addEventListener('click', ()=>{
+        sendPasswordResetEmail(auth, InputEmail.value)
+          .then(() => {
+            InputEmail="";
 
-          enterButton.addEventListener('click', () => {
-            const email = emailInput.value;
-
-            if (!email) {
-              alert("Please enter an email address.");
-              return;
-            }
-
-            auth.sendPasswordResetEmail(email)
-              .then(() => {
-                emailInput.value = "";
-                alert("Password reset email sent!");
-              })
-              .catch((error) => {
-                alert("Error sending password reset email: " + error.message);
-              });
+            // Password reset email sent!
+            alert('Password reset email sent!')
+            // ..
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+            alert('Password reset email sent!')
           });
+      })
 
 
     </script>
