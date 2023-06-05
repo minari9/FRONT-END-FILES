@@ -61,7 +61,6 @@
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-      import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
       import { getAuth, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
     
       const firebaseConfig = {
@@ -75,30 +74,22 @@
         measurementId: "G-Q5ZXK57J3Z"
       };
       // Initialize Firebase app
-      firebase.initializeApp(firebaseConfig);
-
-      // Add event listener to the submit button
-      const submitButton = document.getElementById("submit");
-      submitButton.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const emailInput = document.getElementById("email").value;
-
-        if (!emailInput) {
-          alert("Please enter an email address.");
-          return;
-        }
-
-        firebase
-          .auth()
-          .sendPasswordResetEmail(emailInput)
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      submit.addEventLister('click', ()=>{
+        sendPasswordResetEmail(auth, email)
           .then(() => {
-            alert("Password reset email sent to " + emailInput);
+            // Password reset email sent!
+            alert('Password reset email sent!')
+            // ..
           })
           .catch((error) => {
-            alert("Error sending password reset email: " + error.message);
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
           });
-      });
+      })
+
 
     </script>
       </body>
