@@ -422,8 +422,7 @@ login.addEventListener('click', () => {
 
             alert('User Logged In!');
           } else {
-            auth.signOut();
-            throw new Error('Email not verified');
+            alert('Verify your Email first!')
           }
         }
       });
