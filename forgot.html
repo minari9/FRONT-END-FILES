@@ -41,7 +41,7 @@
             </div>
           </div>
           <br />
-          <button id="submit" class="enter enterLink">Send Password Reset Link</button>
+          <a id="submit" class="enter enterLink" href="#">Send Password Reset Link</a>
         </form>
         <br />
         <br />
@@ -61,6 +61,7 @@
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import { getDatabase} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
       import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
       
       const firebaseConfig = {
@@ -75,12 +76,13 @@
       };
 
       let submit_data = document.getElementById('submit');
-      let forgotEmail = document.querySelector('.inputs input[name="email"]');
+      let forgotEmail = document.getElementById('email');
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
       submit_data.addEventListener("click", ()=>{
+        event.preventDefault();
           sendPasswordResetEmail(auth, forgotEmail.value)
             .then(() => {
               alert("Password Reset Link has been sent to your Email");
