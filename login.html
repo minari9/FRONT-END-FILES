@@ -421,11 +421,8 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
     // ...
         })
         .catch((error) => {
-            const errorMessage = error.message;
-                
-            alert(errorMessage);
-        });
- 
+              alert("Verify your Email First" + error.message);
+            });
     });   
 
   //MICROSOFT
