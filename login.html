@@ -27,7 +27,7 @@
 
         <div class="loginHeader">
           <h1 class="login">Login</h1>
-          <p class="details">lease fill your details to login your account.</p>
+          <p class="details">Please fill your details to login your account.</p>
         </div>
 
         <form action="#" action="">
@@ -379,10 +379,10 @@
       });
     </script> -->
  <script type="module"> 
- // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, OAuthProvider, FacebookAuthProvider, TwitterAuthProvider, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, OAuthProvider, FacebookAuthProvider, TwitterAuthProvider, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
 const firebaseConfig = {
   // Your Firebase configuration
@@ -403,12 +403,11 @@ login.addEventListener('click', () => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Check if the email is verified
-      if (!userCredential.user.emailVerified) {
+      const user = userCredential.user;
+
+      if (!user.emailVerified) {
         throw new Error('Email not verified');
       }
-
-      const user = userCredential.user;
 
       const dt = new Date();
       update(ref(database, 'users/' + user.uid), {
@@ -421,7 +420,6 @@ login.addEventListener('click', () => {
       alert('Login unsuccessful: ' + error.message);
     });
 });
-
   //MICROSOFT
   microsoft.addEventListener('click',(e)=>{
     signInWithPopup(auth, microsoftProvider)
