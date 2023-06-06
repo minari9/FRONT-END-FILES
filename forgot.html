@@ -90,9 +90,11 @@
             // ..
           })
           .catch((error) => {
-            alert('Password reset email sent!')
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
           });
-      })
+      });
 
 
     </script>
