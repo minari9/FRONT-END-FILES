@@ -83,7 +83,6 @@
           const emailInput = document.querySelector("#email");
 
           submitBtn.addEventListener("click", () => {
-              if (emailInput.value !== "") {
                 sendPasswordResetEmail(auth, emailInput.value)
                   .then(() => {
                     window.alert("Password Reset Link Sent!");
@@ -94,10 +93,7 @@
                     const errorMessage = error.message;
                     window.alert(errorMessage);
                   });
-              } else {
-                window.alert("Please write your email first!");
-                console.log("wew1")
-              }
+              
             });   
           });
     </script>
