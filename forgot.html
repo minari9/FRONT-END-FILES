@@ -83,7 +83,7 @@
           const emailInput = document.querySelector("#email");
 
           submitBtn.addEventListener("click", () => {
-              var email = emailInput.value;
+              const email = emailInput.value;
 
               if (email !== "") {
                 sendPasswordResetEmail(auth, email)
@@ -98,7 +98,7 @@
                   });
               } else {
                 window.alert("Please write your email first!");
-                console.log("we1w")
+                console.log("wew")
               }
             });   
         });
