@@ -427,7 +427,10 @@ login.addEventListener('click', () => {
         }
       });
     })
+    .catch((error) => {
+      alert('Login unsuccessful: ' + error.message);
     });
+});
   //MICROSOFT
   microsoft.addEventListener('click',(e)=>{
     signInWithPopup(auth, microsoftProvider)
