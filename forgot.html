@@ -81,21 +81,24 @@
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
         const auth = getAuth(app);
-    
-        let Enter = document.querySelector("#submit");
-      
-        Enter.addEventListener('click', function(){
 
-          let InputEmail = document.querySelector("#email");
+        $("#btn-submit").click(function(){
+            var email = $("#email").val();
 
-          sendPasswordResetEmail(auth, InputEmail.value)
-            .then(() => {
-              console.log ('Password reset email sent!')
-            })
-            .catch((error) => {
-              const errorMessage = error.message;
-              alert(errorMessage);
-            });
+            if(email !=""){
+              auth.sendPasswordResetEmail(email).then(function(){
+                window.alert("Password Reset Link Sent!")
+              })
+              .catch(function(error){
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                window.alert(errorMessage);
+              })
+            }
+            else{
+              window.alert("Please write your email first!")
+            }
         });
       });
     </script>
