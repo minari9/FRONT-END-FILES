@@ -62,7 +62,6 @@
     <script type="module">
 
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-        import { getDatabase,} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
         import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -84,7 +83,7 @@
           const emailInput = document.getElementById("email");
 
           submitBtn.addEventListener("click", () => {
-              const email = emailInput.value;
+              var email = emailInput.value;
 
               if (email !== "") {
                 sendPasswordResetEmail(auth, email)
@@ -99,7 +98,7 @@
                   });
               } else {
                 window.alert("Please write your email first!");
-                console.log("wewew")
+                console.log("wew")
               }
             });   
         });
