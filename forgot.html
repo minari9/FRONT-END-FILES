@@ -80,7 +80,7 @@
           const auth = getAuth(app);
 
           const submitBtn = document.getElementById("submit");
-          const emailInput = document.getElementById("email");
+          const emailInput = document.querySelector("#email");
 
           submitBtn.addEventListener("click", () => {
               var email = emailInput.value;
@@ -98,7 +98,7 @@
                   });
               } else {
                 window.alert("Please write your email first!");
-                console.log("wew")
+                console.log("we1w")
               }
             });   
         });
