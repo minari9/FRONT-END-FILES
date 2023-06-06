@@ -77,30 +77,30 @@
             measurementId: "G-Q5ZXK57J3Z"
         };
     
-        // Initialize Firebase app
-        const app = initializeApp(firebaseConfig);
-        const database = getDatabase(app);
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth(app);
 
-        $("#submit").click(function(){
-            var email = $("#email").val();
-            const auth = getAuth(app);
+          const submitBtn = document.getElementById("submit");
+          const emailInput = document.getElementById("email");
 
-            if(email !=""){
-              auth.sendPasswordResetEmail(email).then(function(){
-                window.alert("Password Reset Link Sent!")
-              })
-              .catch(function(error){
-                var errorCode = error.code;
-                var errorMessage = error.message;
+          submitBtn.addEventListener("click", () => {
+            const email = emailInput.value;
 
-                window.alert(errorMessage);
-              })
+            if (email !== "") {
+              sendPasswordResetEmail(auth, email)
+                .then(() => {
+                  window.alert("Password Reset Link Sent!");
+                })
+                .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                  window.alert(errorMessage);
+                });
+            } else {
+              window.alert("Please write your email first!");
             }
-            else{
-              window.alert("Please write your email first!")
-            }
+          });
         });
-      });
     </script>
           </body>
 </html>
