@@ -83,7 +83,6 @@
       Enter.addEventListener('click', ()=>{
         sendPasswordResetEmail(auth, InputEmail.value)
           .then(() => {
-            InputEmail="";
 
             // Password reset email sent!
             alert('Password reset email sent!')
