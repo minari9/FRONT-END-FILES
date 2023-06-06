@@ -91,12 +91,11 @@
               // Password reset email sent!
               alert('Password reset email sent!');
             })
-        })
-        .catch((error) => {
-              const errorCode = error.code;
+            .catch((error) => {
               const errorMessage = error.message;
               alert(errorMessage);
             });
+        });
       });
     </script>
           </body>
