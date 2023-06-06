@@ -83,7 +83,7 @@
           const emailInput = document.querySelector("#email");
 
           submitBtn.addEventListener("click", () => {
-              if (email !== "") {
+              if (emailInput.value !== "") {
                 sendPasswordResetEmail(auth, emailInput.value)
                   .then(() => {
                     window.alert("Password Reset Link Sent!");
