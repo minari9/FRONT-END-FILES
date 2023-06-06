@@ -55,7 +55,7 @@
         <br />
         <br />
         <br />
-        <a href="login.html" class="enter enterLink">Back to Login</a>
+        <a href="login.html" class="enter enterLink">ack to Login</a>
       </section>
     </main>
 
@@ -80,10 +80,10 @@
         // Initialize Firebase app
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
-        const auth = getAuth(app);
 
         $("#submit").click(function(){
             var email = $("#email").val();
+            const auth = getAuth(app);
 
             if(email !=""){
               auth.sendPasswordResetEmail(email).then(function(){
