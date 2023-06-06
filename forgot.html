@@ -55,7 +55,7 @@
         <br />
         <br />
         <br />
-        <a href="login.html" class="enter enterLink">ack to Login</a>
+        <a href="login.html" class="enter enterLink">back to Login</a>
       </section>
     </main>
 
@@ -87,7 +87,7 @@
         Enter.addEventListener('click', function(){
 
           let InputEmail = document.querySelector("#email");
-          
+
           sendPasswordResetEmail(auth, InputEmail.value)
             .then(() => {
               console.log ('Password reset email sent!')
