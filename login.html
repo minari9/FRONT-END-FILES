@@ -415,11 +415,11 @@ login.addEventListener('click', () => {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           if (user.emailVerified) {
+            window.location.href = 'C:\Users\Vincent\OneDrive\Documents\PROGRAMS\FE\FRONT END FILES\index.html';
             const dt = new Date();
             update(ref(database, 'users/' + user.uid), {
               last_login: dt,
             });
-
             alert('User Logged In!');
           } else {
             alert('Verify your Email first!')
